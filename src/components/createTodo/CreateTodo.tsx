@@ -4,6 +4,8 @@ import { CreateInputStateType } from './CreateTodo.interface';
 import { useAppDispatch } from 'service/store';
 import { createTodoAction } from 'service/redux/action/todoAction';
 import { getNanoid } from 'service/util/nanoId';
+import Input from 'service/common/reusable/input/Input';
+import Button from 'service/common/reusable/button/Button';
 
 const CreateTodo = () => {
   const dispatch = useAppDispatch();
@@ -16,18 +18,24 @@ const CreateTodo = () => {
   };
 
   const createInputAddBtn = () => {
-    dispatch(createTodoAction({ ...createInput, id: getNanoid() }));
+    const { todo } = createInput;
+    if (!todo) {
+      alert('Enter Todo');
+    } else {
+      dispatch(createTodoAction({ ...createInput, id: getNanoid() }));
+    }
+    setCreateInput({ ...createInput, todo: '' });
   };
 
   return (
     <Styled.CreateTodo>
-      <input
+      <Input
         name="todo"
         value={createInput.todo}
         placeholder="Enter Todo"
         onChange={createInputFunc}
       />
-      <button onClick={createInputAddBtn}>ADD</button>
+      <Button text="ADD" onClick={createInputAddBtn} />
     </Styled.CreateTodo>
   );
 };

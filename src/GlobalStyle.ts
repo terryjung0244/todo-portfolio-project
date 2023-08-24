@@ -47,6 +47,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   :root {
-    font-size: 10px;
+    font-size: 20px;
   }
 `;
