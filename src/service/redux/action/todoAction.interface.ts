@@ -2,7 +2,8 @@ import { AnyAction } from '@reduxjs/toolkit';
 import { TODO_ACTIONS_CONST } from 'service/const/todoActionConst';
 import { TodoType } from 'service/model/todoGeneral';
 
-const { CREATE_TODO, SEND_SINGLE_TODO_ID, UPDATE_TODO } = TODO_ACTIONS_CONST;
+const { CREATE_TODO, SEND_SINGLE_TODO_ID, UPDATE_TODO, DELETE_TODO } =
+  TODO_ACTIONS_CONST;
 
 export interface CreateTodoReturnType {
   type: typeof CREATE_TODO;
@@ -19,7 +20,14 @@ export interface UpdateTodoReturnType {
   payload: TodoType;
 }
 
+export interface DeleteTodoReturnType {
+  type: typeof DELETE_TODO;
+  payload: null;
+}
+
 export type TodoActionsType =
   | CreateTodoReturnType
   | SendSingleIdActionReturnType
+  | UpdateTodoReturnType
+  | DeleteTodoReturnType
   | AnyAction;

@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from 'service/store';
 import { TodoType } from 'service/model/todoGeneral';
 import UpdateTodo from 'components/updateTodo/UpdateTodo';
 import { sendSingleIdAction } from 'service/redux/action/todoAction';
+import DeleteTodo from 'components/deleteTodo/DeleteTodo';
 
 const ShowTodo = () => {
   const dispath = useAppDispatch();
@@ -27,10 +28,8 @@ const ShowTodo = () => {
                 onChange={() => checkboxForEach(todo.id)}
               />
               <div>todo: {todo.todo}</div>
-
               <UpdateTodo />
-
-              <div>delete</div>
+              <DeleteTodo />
             </div>
           );
         })}

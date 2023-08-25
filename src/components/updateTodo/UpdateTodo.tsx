@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import * as Styled from './Update.Styled';
+import * as Styled from './UpdateTodo.Styled';
 import { useAppDispatch, useAppSelector } from 'service/store';
 import Input from 'service/common/reusable/input/Input';
-import { UpdateInputStateType } from './Update.interface';
+import { UpdateInputStateType } from './UpdateTodo.interface';
 import Button from 'service/common/reusable/button/Button';
 import { updateTodoAction } from 'service/redux/action/todoAction';
 import { getNanoid } from 'service/util/nanoId';
@@ -30,7 +30,7 @@ const UpdateTodo = () => {
   };
 
   return (
-    <Styled.updateTodo onClick={updateTodoFunc}>
+    <Styled.UpdateTodo onClick={updateTodoFunc}>
       <div>Update</div>
       <div>
         {showUpdateInput && selectedIdList.length === 1 && (
@@ -46,7 +46,7 @@ const UpdateTodo = () => {
           </div>
         )}
       </div>
-    </Styled.updateTodo>
+    </Styled.UpdateTodo>
   );
 };
 
