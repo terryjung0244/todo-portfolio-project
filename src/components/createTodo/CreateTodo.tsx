@@ -29,13 +29,22 @@ const CreateTodo = () => {
 
   return (
     <Styled.CreateTodo>
-      <Input
-        name="todo"
-        value={createInput.todo}
-        placeholder="Enter Todo"
-        onChange={createInputFunc}
-      />
-      <Button text="ADD" onClick={createInputAddBtn} />
+      <div className="input-and-button-background">
+        <div className="input-and-button-main">
+          <Input
+            className="createTodo-input"
+            name="todo"
+            value={createInput.todo}
+            placeholder="Enter Todo"
+            onChange={createInputFunc}
+          />
+          <Button
+            className="createTodo-button"
+            text="ADD"
+            onClick={createInputAddBtn}
+          />
+        </div>
+      </div>
     </Styled.CreateTodo>
   );
 };

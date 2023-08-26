@@ -53,14 +53,18 @@ export const todoReducer: Reducer<TodoReducerStateType, TodoActionsType> = (
       // 그 안에서, todoList을 findIndex() method(index찾는법)를 사용해서,
       // 내가 선택한 id이랑 todoList안에 있는 id랑 똑같으면 그 index값을 const index에 넣어라
 
-      //
+      // DELETE
       case DELETE_TODO:
         {
           draft.selectedIdList.forEach((id: string) => {
             const index = draft.todoList.findIndex(
               (todo: TodoType) => todo.id === id,
             );
-            draft.todoList.splice(index, 1);
+            if (index > -1) {
+              draft.todoList.splice(index, 1);
+            } else {
+              draft.selectedIdList = [];
+            }
           });
         }
         break;

@@ -36,13 +36,18 @@ const UpdateTodo = () => {
         {showUpdateInput && selectedIdList.length === 1 && (
           <div>
             <Input
+              className=""
               name="todo"
               value={updateInput.todo}
               placeholder="Enter Update"
               onChange={updateInputFunc}
             />
 
-            <Button text="UPDATE" onClick={updateButtonForNewTodo} />
+            <Button
+              className=""
+              text="UPDATE"
+              onClick={updateButtonForNewTodo}
+            />
           </div>
         )}
       </div>

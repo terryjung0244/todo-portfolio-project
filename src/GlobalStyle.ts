@@ -9,6 +9,12 @@ export const globalPadding = {
 
 export const colors = {
   primary: '#1D7874',
+  font: '#f5f0bb',
+  background: '#73a9ad',
+};
+
+export const borderRadius = {
+  primary: '5px',
 };
 
 export const responsiveSize = {
@@ -47,6 +53,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   :root {
-    font-size: 20px;
+    font-size: 16px;
   }
 `;

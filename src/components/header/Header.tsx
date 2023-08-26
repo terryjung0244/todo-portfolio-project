@@ -4,7 +4,7 @@ import * as Styled from './Header.Styled';
 const Header = () => {
   return (
     <Styled.Header>
-      <div>Todo</div>
+      <div className="main-text">Todo</div>
     </Styled.Header>
   );
 };
