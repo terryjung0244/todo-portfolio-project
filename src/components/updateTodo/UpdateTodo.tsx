@@ -36,7 +36,6 @@ const UpdateTodo = () => {
         {showUpdateInput && selectedIdList.length === 1 && (
           <div>
             <Input
-              className=""
               name="todo"
               value={updateInput.todo}
               placeholder="Enter Update"

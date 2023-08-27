@@ -5,8 +5,13 @@ import { TodoActionsType } from '../action/todoAction.interface';
 import { TODO_ACTIONS_CONST } from 'service/const/todoActionConst';
 import { TodoType } from 'service/model/todoGeneral';
 
-const { CREATE_TODO, SEND_SINGLE_TODO_ID, UPDATE_TODO, DELETE_TODO } =
-  TODO_ACTIONS_CONST;
+const {
+  CREATE_TODO,
+  SEND_SINGLE_TODO_ID,
+  SEND_ALL_TODO_ID,
+  UPDATE_TODO,
+  DELETE_TODO,
+} = TODO_ACTIONS_CONST;
 
 const initialState: TodoReducerStateType = {
   todoList: [],
@@ -24,7 +29,7 @@ export const todoReducer: Reducer<TodoReducerStateType, TodoActionsType> = (
         draft.todoList.push(action.payload);
         break;
 
-      // CHECK BOX
+      // SINGLE CHECK BOX
       case SEND_SINGLE_TODO_ID:
         {
           const index = draft.selectedIdList.indexOf(action.payload);
@@ -33,6 +38,21 @@ export const todoReducer: Reducer<TodoReducerStateType, TodoActionsType> = (
           } else {
             draft.selectedIdList.splice(index, 1);
           }
+        }
+        break;
+
+      // ALL CHECK BOX
+      case SEND_ALL_TODO_ID:
+        if (action.payload) {
+          //true
+          const resultForSendAllId = draft.todoList.map(
+            (todo: TodoType) => todo.id,
+          );
+          draft.selectedIdList = resultForSendAllId;
+        } else {
+          draft.selectedIdList = [];
+
+          // 같으면 true, 아니면 false
         }
         break;
 

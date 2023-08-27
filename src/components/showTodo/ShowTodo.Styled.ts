@@ -1,3 +1,4 @@
+import { colors } from 'GlobalStyle';
 import styled from 'styled-components';
 
 export const ShowTodo = styled.div`
@@ -5,6 +6,8 @@ export const ShowTodo = styled.div`
   width: 100%;
   min-height: 100px;
   font-size: 1rem;
+  padding: 5px;
+  background-color: ${colors.background};
 
   .todo-map {
     display: flex;

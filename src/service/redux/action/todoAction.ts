@@ -5,10 +5,16 @@ import {
   SendSingleIdActionReturnType,
   UpdateTodoReturnType,
   DeleteTodoReturnType,
+  SendAllIdActionReturnType,
 } from './todoAction.interface';
 
-const { CREATE_TODO, SEND_SINGLE_TODO_ID, UPDATE_TODO, DELETE_TODO } =
-  TODO_ACTIONS_CONST;
+const {
+  CREATE_TODO,
+  SEND_SINGLE_TODO_ID,
+  SEND_ALL_TODO_ID,
+  UPDATE_TODO,
+  DELETE_TODO,
+} = TODO_ACTIONS_CONST;
 
 export const createTodoAction = (todoInput: TodoType): CreateTodoReturnType => {
   return {
@@ -23,6 +29,15 @@ export const sendSingleIdAction = (
   return {
     type: SEND_SINGLE_TODO_ID,
     payload: id,
+  };
+};
+
+export const sendAllIdAction = (
+  checked: boolean,
+): SendAllIdActionReturnType => {
+  return {
+    type: SEND_ALL_TODO_ID,
+    payload: checked,
   };
 };
 
