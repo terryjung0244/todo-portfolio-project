@@ -39,6 +39,7 @@ const CreateTodo = () => {
             onChange={createInputFunc}
           />
           <Button
+            dataTestId="test-createTodo-button"
             className="createTodo-button"
             text="ADD"
             onClick={createInputAddBtn}

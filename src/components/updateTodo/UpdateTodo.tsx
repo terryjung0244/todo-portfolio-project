@@ -43,6 +43,7 @@ const UpdateTodo = () => {
             />
 
             <Button
+              dataTestId="test-updateTodo-button"
               className=""
               text="UPDATE"
               onClick={updateButtonForNewTodo}
