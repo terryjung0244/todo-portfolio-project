@@ -42,7 +42,7 @@ export const sendAllIdAction = (
 };
 
 export const updateTodoAction = (
-  updateInput: TodoType,
+  updateInput: Partial<TodoType>,
 ): UpdateTodoReturnType => {
   return {
     type: UPDATE_TODO,

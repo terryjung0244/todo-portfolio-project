@@ -29,8 +29,8 @@ const TodoMap = () => {
               />
             </td>
             <td>{todo.todo}</td>
-            <td>
-              <UpdateTodo />
+            <td style={{ minWidth: '70px' }}>
+              {selectedIdList.includes(todo.id) && <UpdateTodo todo={todo} />}
             </td>
             <td>
               <DeleteTodo />

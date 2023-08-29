@@ -5,8 +5,13 @@ import { useAppSelector } from 'service/store';
 
 const ShowTodo = () => {
   const { todoList } = useAppSelector((state) => state.todoReducer);
+
+  if (!todoList.length) return <Styled.ShowTodo>Please </Styled.ShowTodo>;
+
   return (
-    <Styled.ShowTodo>{todoList.length > 0 && <TodoTable />}</Styled.ShowTodo>
+    <Styled.ShowTodo>
+      <TodoTable />
+    </Styled.ShowTodo>
   );
 };
 

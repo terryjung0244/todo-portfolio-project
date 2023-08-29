@@ -59,14 +59,11 @@ export const todoReducer: Reducer<TodoReducerStateType, TodoActionsType> = (
       // UPDATE
       case UPDATE_TODO:
         {
-          const { todo } = action.payload; // New Input todo: 'value'
-          draft.selectedIdList.forEach((id: string) => {
-            const index = draft.todoList.findIndex(
-              (todo: TodoType) => id === todo.id,
-            );
-            draft.todoList[index].todo = todo;
-            draft.selectedIdList = [];
-          });
+          const { id, todo } = action.payload; // New Input todo: 'value'
+          const index = draft.todoList.findIndex(
+            (todo: TodoType) => id === todo.id,
+          );
+          draft.todoList[index].todo = todo;
         }
         break;
       // 1. selectedList을 forEach()로 id를 looping 시키고,
@@ -76,16 +73,20 @@ export const todoReducer: Reducer<TodoReducerStateType, TodoActionsType> = (
       // DELETE
       case DELETE_TODO:
         {
-          draft.selectedIdList.forEach((id: string) => {
-            const index = draft.todoList.findIndex(
-              (todo: TodoType) => todo.id === id,
-            );
-            if (index > -1) {
-              draft.todoList.splice(index, 1);
-            } else {
-              draft.selectedIdList = [];
-            }
+          // draft.selectedIdList.forEach((id: string) => {
+          //   const index = draft.todoList.findIndex(
+          //     (todo: TodoType) => todo.id === id,
+          //   );
+          //   if (index > -1) {
+          //     draft.todoList.splice(index, 1);
+          //   }
+          // });
+
+          const newTodoList = draft.todoList.filter((todo: TodoType) => {
+            if (!draft.selectedIdList.includes(todo.id)) return todo;
           });
+          draft.todoList = newTodoList;
+          draft.selectedIdList = [];
         }
         break;
 

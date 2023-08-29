@@ -27,7 +27,7 @@ export interface SendAllIdActionReturnType {
 
 export interface UpdateTodoReturnType {
   type: typeof UPDATE_TODO;
-  payload: TodoType;
+  payload: Partial<TodoType>;
 }
 
 export interface DeleteTodoReturnType {

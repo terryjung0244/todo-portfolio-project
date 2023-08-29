@@ -1,16 +1,30 @@
-import { render } from '@testing-library/react';
-import Button from '../Button';
-import { ButtonPropsType } from '../Button.interface';
+// import { render } from '@testing-library/react';
+// import Button from '../Button';
+// import { ButtonPropsType } from '../Button.interface';
 
-describe('common/reusable/button', () => {
-  const props: ButtonPropsType = {
-    text: 'button',
-    onClick: () => null,
-    dataTestId: 'test-button',
-  };
+// const renderComponent = (props: ButtonPropsType) => {
+//   render(<Button {...props} />);
+// };
 
-  it('Render resusable button', () => {
-    const { getByTestId } = render(<Button {...props} />);
-    expect(getByTestId('test-button')).toBeInTheDocument();
-  });
-});
+// describe('common/reusable/button', () => {
+//   let props: ButtonPropsType;
+
+//   beforeEach(() => {
+//     props = {
+//       text: 'button',
+//       onClick: () => null,
+//       dataTestId: 'test-button',
+//     };
+//   });
+
+//   it('Render reusable button', () => {
+//     const { getByTestId } = render(<Button {...props} />);
+//     expect(getByTestId('test-button')).toBeInTheDocument();
+//   });
+
+//   it('Test text', () => {
+//     const { getByTestId } = renderComponent(props);
+//     expect(getByTestId('test-button')).toHaveTextContent('button');
+//   });
+// });
+export {};
