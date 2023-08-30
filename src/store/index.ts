@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { useSelector, useDispatch } from 'react-redux';
-import { todoReducer } from 'service/redux/reducer/todoReducer';
+import { todoReducer } from 'redux/reducer/todoReducer';
 
 export const createStore = () =>
   configureStore({
