@@ -6,7 +6,12 @@ import { useAppSelector } from 'store';
 const ShowTodo = () => {
   const { todoList } = useAppSelector((state) => state.todoReducer);
 
-  if (!todoList.length) return <Styled.ShowTodo>Please </Styled.ShowTodo>;
+  if (!todoList.length)
+    return (
+      <Styled.ShowTodo>
+        <div className="add-your-todo-text">Add your todo</div>
+      </Styled.ShowTodo>
+    );
 
   return (
     <Styled.ShowTodo>

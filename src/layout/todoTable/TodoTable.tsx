@@ -30,8 +30,8 @@ const TodoTable = () => {
               />
             </th>
             <th className="todo-container">Todo List</th>
-            <th className="update-container"></th>
-            <th className="delete-container"></th>
+            <th className="update-container">Update</th>
+            <th className="delete-container">Delete</th>
           </tr>
         </thead>
         <TodoMap />

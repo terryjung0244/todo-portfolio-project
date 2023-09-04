@@ -31,7 +31,6 @@ const TodoMap = () => {
             <td>{todo.todo}</td>
             <td style={{ minWidth: '70px' }}>
               {selectedIdList.includes(todo.id) && <UpdateTodo todo={todo} />}
-              // 체크하고서 update가 보여짐.
             </td>
             <td>
               <DeleteTodo />

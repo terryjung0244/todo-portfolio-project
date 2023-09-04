@@ -11,18 +11,8 @@ const Modal = ({
   onClickYesButton = () => null,
   onClickNoButton = () => null,
 }: ModalPropsType) => {
-  // const modalRef = useRef<HTMLDivElement | null>(null);
-  // useEffect(() => {
-  //   modalRef.current?.focus();
-  // }, []);
-
   return (
-    <Styled.Modal
-      width={width}
-      // ref={modalRef}
-      // tabIndex={0}
-      // onBlur={onClickNoButton}
-    >
+    <Styled.Modal width={width}>
       <div className="modal-content">
         <div className="modal-title">{title}</div>
         {children}

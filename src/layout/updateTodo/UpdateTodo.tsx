@@ -24,6 +24,8 @@ const UpdateTodo = ({ todo }: { todo: TodoType }) => {
 
   const updateTodoFunc = () => {
     setUpdateModalToggle((prev) => !prev);
+    // 불릴때마다 반대값으로 update 시켜주는것
+    // setUpdateModalToggle(true);
     setUpdateInput({ ...updateInput, todo: '' }); // 초기화
   };
 
@@ -43,14 +45,14 @@ const UpdateTodo = ({ todo }: { todo: TodoType }) => {
       {updateModalToggle && (
         <Modal
           title="Update Todo"
-          onClickNoButton={updateTodoFunc}
-          onClickYesButton={onClickYesInModal}
           yesButtonText="Update"
+          onClickYesButton={onClickYesInModal} // update
           noButtonText="Cancel"
+          onClickNoButton={updateTodoFunc} // cancel
           width="80%"
         >
           <div>
-            <h3>{todo.id}</h3>
+            {/* <h3>{todo.id}</h3> */}
             <Input
               name="todo"
               value={updateInput.todo}

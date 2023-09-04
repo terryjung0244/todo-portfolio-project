@@ -1,11 +1,10 @@
-import { borderRadius, colors } from 'GlobalStyle';
+import { borderRadius } from 'GlobalStyle';
 import styled from 'styled-components';
 
 export const CreateTodo = styled.div`
   width: 100%;
 
   .input-and-button-background {
-    background-color: ${colors.background};
     padding: 5px;
   }
 
@@ -15,7 +14,6 @@ export const CreateTodo = styled.div`
     align-items: center;
     flex-direction: column;
     background-color: whitesmoke;
-    /* border-radius: ${borderRadius.primary}; */
     padding: 5px 5px 5px 5px;
   }
 
@@ -25,15 +23,14 @@ export const CreateTodo = styled.div`
     text-align: center;
     margin-bottom: 5px;
     border: 2px solid lightgray;
-    border-radius: ${borderRadius.primary};
+    border-radius: ${borderRadius};
+    font-size: 2rem;
   }
 
   .createTodo-button {
     width: 80px;
     height: 40px;
     border: 2px solid lightgray;
-    border-radius: ${borderRadius.primary};
-    background-color: ${colors.background};
-    color: ${colors.font};
+    border-radius: ${borderRadius};
   }
 `;
