@@ -1,3 +1,4 @@
-// css
+질문.
 
-1. 100% / 100vw 차이
+1. updateInput validation error.
+2. github issue.

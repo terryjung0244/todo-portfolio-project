@@ -32,6 +32,7 @@ const CreateTodo = () => {
       <div className="input-and-button-background">
         <div className="input-and-button-main">
           <Input
+            dataTestId="createTodo-input-data-TestId"
             className="createTodo-input"
             name="todo"
             value={createInput.todo}
@@ -39,6 +40,8 @@ const CreateTodo = () => {
             onChange={createInputFunc}
           />
           <Button
+            width="120px"
+            height="60px"
             dataTestId="test-createTodo-button"
             className="createTodo-button"
             text="ADD"

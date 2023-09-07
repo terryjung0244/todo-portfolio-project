@@ -30,10 +30,13 @@ const UpdateTodo = ({ todo }: { todo: TodoType }) => {
   };
 
   const onClickYesInModal = () => {
+    const { todo: updateTodoInput } = updateInput;
+    if (!updateTodoInput) {
+      alert('Enter your UpdateTodo');
+      return; // Early return
+    }
     updateTodoFunc();
-    console.log(todo.id);
-    console.log(updateInput.todo);
-    dispatch(updateTodoAction({ id: todo.id, todo: updateInput.todo }));
+    dispatch(updateTodoAction({ id: todo.id, todo: updateTodoInput }));
   };
 
   return (
@@ -54,6 +57,7 @@ const UpdateTodo = ({ todo }: { todo: TodoType }) => {
           <div>
             {/* <h3>{todo.id}</h3> */}
             <Input
+              dataTestId="updateTodo-input-dataTestId"
               name="todo"
               value={updateInput.todo}
               placeholder="Enter Update"

@@ -21,7 +21,7 @@ const TodoMap = () => {
       {todoList.map((todo: TodoType) => {
         return (
           <tr key={todo.id}>
-            <td>
+            <td style={{ maxWidth: '20px' }}>
               <input
                 type="checkbox"
                 checked={selectedIdList.includes(todo.id)} //
@@ -29,7 +29,7 @@ const TodoMap = () => {
               />
             </td>
             <td>{todo.todo}</td>
-            <td style={{ minWidth: '70px' }}>
+            <td>
               {selectedIdList.includes(todo.id) && <UpdateTodo todo={todo} />}
             </td>
             <td>

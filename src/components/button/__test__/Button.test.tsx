@@ -1,37 +1,45 @@
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import Button from '../Button';
 import { ButtonPropsType } from '../Button.interface';
 
-const renderComponent = (props: ButtonPropsType) => {
-  return render(<Button {...props} />);
-};
-
-// props값이 달라질때도 있기때문에, 위에같이 테스팅할 props를 받는다.
+const renderComponent = (props: ButtonPropsType) =>
+  render(<Button {...props} />);
 
 describe('common/reusable/button', () => {
+  const buttonClicked = jest.fn();
+
   let props: ButtonPropsType;
 
   beforeEach(() => {
     props = {
       text: 'button',
-      onClick: () => null,
+      onClick: buttonClicked,
       dataTestId: 'test-button',
     };
   });
-  // 값을 유지하기위해서 beforeEach를 사용한다.
 
   it('Render reusable button', () => {
     const { getByTestId } = renderComponent(props);
     expect(getByTestId('test-button')).toBeInTheDocument();
   });
 
-  it('Test for width and height' () => {
+  it('Test for width and height', () => {
     const { getByTestId } = renderComponent(props);
-    
-  })
+    expect(getByTestId('test-button')).toHaveAttribute(
+      'style',
+      'width: 100px; height: 50px;',
+    );
+  });
 
   it('Test text', () => {
     const { getByTestId } = render(<Button {...props} />);
     expect(getByTestId('test-button')).toHaveTextContent('button');
+  });
+
+  it('Simulate a button operational', () => {
+    const { getByTestId } = render(<Button {...props} />);
+    fireEvent.click(getByTestId('test-button'));
+    expect(buttonClicked).toHaveBeenCalledTimes(1);
+    // fireEvent.click(getByTestId('test-button'));
   });
 });

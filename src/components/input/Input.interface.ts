@@ -4,4 +4,5 @@ export interface InputPropsType {
   value: string;
   placeholder: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  dataTestId: string;
 }

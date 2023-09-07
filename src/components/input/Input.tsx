@@ -8,9 +8,11 @@ const Input = ({
   placeholder,
   onChange,
   className,
+  dataTestId,
 }: InputPropsType) => {
   return (
     <Styled.Input
+      data-testid={dataTestId}
       className={className}
       name={name}
       value={value}

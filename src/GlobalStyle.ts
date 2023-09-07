@@ -45,10 +45,10 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     justify-content: center;
-    height: 100vh;
+    /* height: 100vh; */
     border-radius: 5px;
     background-color: #6a60a9;
     

@@ -3,6 +3,6 @@ export interface ButtonPropsType {
   text: string;
   onClick: () => void;
   dataTestId: string;
-  width: string;
-  height: string;
+  width?: string;
+  height?: string;
 }
