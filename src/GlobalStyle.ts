@@ -9,6 +9,12 @@ export const globalPadding = {
 
 export const colors = {
   primary: '#1D7874',
+  font: '#f5f0bb',
+  opacity: 0.7,
+};
+
+export const borderRadius = {
+  borderRadius: '5px',
 };
 
 export const responsiveSize = {
@@ -39,10 +45,12 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     justify-content: center;
-    height: 100vh;
+    /* height: 100vh; */
+    border-radius: 5px;
+    background-color: #6a60a9;
     
   }
 

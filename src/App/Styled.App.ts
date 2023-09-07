@@ -5,9 +5,10 @@ export const App = styled.div`
   border: 1px solid blue;
   max-width: ${globalMaxWidth};
   width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 
   .body-grid-divider {
