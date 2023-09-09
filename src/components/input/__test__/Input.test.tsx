@@ -43,5 +43,11 @@ describe('components/input', () => {
     });
     expect(inputOnChange).toHaveBeenCalledTimes(1);
     // onChange가 발생했을때, 몇번 called했는가...
+    fireEvent.change(input, {
+      target: {
+        value: 'hello world',
+      },
+    });
+    expect(inputOnChange).toHaveBeenCalledTimes(2);
   });
 });
