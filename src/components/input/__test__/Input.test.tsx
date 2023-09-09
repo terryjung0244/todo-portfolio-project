@@ -1,10 +1,11 @@
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { InputPropsType } from '../Input.interface';
 import Input from '../Input';
 
 const renderComponent = (props: InputPropsType) => render(<Input {...props} />);
 
 describe('components/input', () => {
+  const inputOnChange = jest.fn();
   let props: InputPropsType;
 
   beforeEach(() => {
@@ -12,7 +13,7 @@ describe('components/input', () => {
       name: 'todo',
       value: 'abc',
       placeholder: 'enter todo',
-      onChange: () => null,
+      onChange: inputOnChange,
       dataTestId: 'input',
     };
   });
@@ -24,8 +25,23 @@ describe('components/input', () => {
   });
 
   // Attribute render name / value
-  it('Attribute render name and value', () => {
+  it('Render Attribute name and value', () => {
     const { getByTestId } = renderComponent(props);
     expect(getByTestId('input')).toHaveAttribute('value', 'abc');
+  });
+
+  it('Render onChange Event', () => {
+    const { getByTestId } = renderComponent(props);
+    const input = getByTestId('input');
+    // dateTestId: 'input'을 가져와서 input variable에 store한다.
+
+    fireEvent.change(input, {
+      target: {
+        value: 'hello',
+        name: 'abc',
+      },
+    });
+    expect(inputOnChange).toHaveBeenCalledTimes(1);
+    // onChange가 발생했을때, 몇번 called했는가...
   });
 });
