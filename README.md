@@ -1,4 +1,3 @@
 질문.
 
-1. updateInput validation error.
-2. github issue.
+1. Input Test에서 target.value가 'hello'라고 해도 pass한다.
