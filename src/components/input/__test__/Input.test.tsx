@@ -17,8 +17,15 @@ describe('components/input', () => {
     };
   });
 
+  // Render
   it('Render input component', () => {
     const { getByTestId } = renderComponent(props);
     expect(getByTestId('input')).toBeInTheDocument();
+  });
+
+  // Attribute render name / value
+  it('Attribute render name and value', () => {
+    const { getByTestId } = renderComponent(props);
+    expect(getByTestId('input')).toHaveAttribute('value', 'abc');
   });
 });
