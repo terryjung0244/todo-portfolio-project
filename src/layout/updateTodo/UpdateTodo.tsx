@@ -47,6 +47,7 @@ const UpdateTodo = ({ todo }: { todo: TodoType }) => {
 
       {updateModalToggle && (
         <Modal
+          dataTestId="modal-test-id"
           title="Update Todo"
           yesButtonText="Update"
           onClickYesButton={onClickYesInModal} // update

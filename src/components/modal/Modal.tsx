@@ -11,6 +11,7 @@ const Modal = ({
   noButtonText = '',
   onClickYesButton = () => null,
   onClickNoButton = () => null,
+  dataTestId,
 }: ModalPropsType) => {
   const modalRef = useRef<HTMLDivElement | null>(null);
 
@@ -19,7 +20,7 @@ const Modal = ({
   }, []);
 
   return (
-    <Styled.Modal width={width}>
+    <Styled.Modal width={width} data-testid={dataTestId}>
       <div
         className="modal-content"
         ref={modalRef}
