@@ -29,7 +29,9 @@ const Modal = ({
           if (!e.relatedTarget) onClickNoButton();
         }}
       >
-        <div className="modal-title">{title}</div>
+        <div className="modal-title" data-testid="modal-title">
+          {title}
+        </div>
         {children}
         <div className="modal-button-container">
           {yesButtonText && (
