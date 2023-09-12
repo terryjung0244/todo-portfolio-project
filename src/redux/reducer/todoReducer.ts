@@ -44,7 +44,7 @@ export const todoReducer: Reducer<TodoReducerStateType, TodoActionsType> = (
       // ALL CHECK BOX
       case SEND_ALL_TODO_ID:
         if (action.payload) {
-          //true
+          //true면
           const resultForSendAllId = draft.todoList.map(
             (todo: TodoType) => todo.id,
           );

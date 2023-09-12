@@ -38,7 +38,6 @@ describe('components/input', () => {
     fireEvent.change(input, {
       target: {
         value: 'hello',
-        name: 'abc',
       },
     });
     expect(inputOnChange).toHaveBeenCalledTimes(1);
