@@ -39,16 +39,20 @@ describe('service/redux/reducer/todoReducer/', () => {
 
   it('test updateTodoAction', () => {
     store.dispatch(createTodoAction(todoMockData[0])); //todoMockData[0] createTodoAction dispatch,
-    store.dispatch(
-      sendSingleIdAction(selectedIdListMockDataForUpdateTesting[0]),
-    );
     // 'todoMockId1 value값을 selectedIdList에 dispatch하고,
-    store.dispatch(updateTodoAction({ todo: 'todoMockTask3' }));
-    expect(store.getState().todoReducer.todoList).toEqual({
-      // ...todoMockData[0],
-      id: todoMockData[0].id,
-      todo: 'todoMockTask3',
-    });
+    store.dispatch(
+      updateTodoAction({
+        id: selectedIdListMockDataForUpdateTesting[0],
+        todo: 'test todo',
+      }),
+    );
+    // [ { id: 'todoMockId1', todo: 'test todo', isChecked: false } ]
+    expect(store.getState().todoReducer.todoList).toEqual([
+      {
+        ...todoMockData[0],
+        todo: 'test todo',
+      },
+    ]);
   });
 
   it('test deleteTodoAction', () => {

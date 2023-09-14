@@ -4,7 +4,21 @@ import { Provider } from 'react-redux';
 import { Store } from '@reduxjs/toolkit';
 import { createMockStore } from 'service/mock/store/mockStore';
 import { todoReducerMockDataInitialState } from 'service/mock/data/todoReducerMockData';
-import { InputPropsType } from 'components/input/Input.interface';
+import { createTodoAction } from 'redux/action/todoAction';
+// import { getNanoid } from 'util/nanoId';
+window.alert = jest.fn();
+
+jest.mock('redux/action/todoAction', () => ({
+  createTodoAction: jest.fn(),
+}));
+
+const setNanoId = 'ABCD1234';
+
+jest.mock('util/nanoid', () => ({
+  getNanoid: () => {
+    return setNanoId;
+  },
+}));
 
 const renderComponent = (store: Store) =>
   render(
@@ -43,7 +57,23 @@ describe('layout/createTodo', () => {
     expect(getByTestId('button-component')).toBeInTheDocument();
   });
 
-  it('test ');
-});
+  it('test dispatch(createTodoAction) when the todo has input value', () => {
+    const { getByTestId } = renderComponent(store);
 
-// alert('Enter Todo');
+    fireEvent.change(getByTestId('input-component'));
+    expect(getByTestId('input-component')).toBeInTheDocument();
+
+    fireEvent.change(getByTestId('input-component'), {
+      target: {
+        value: 'todo',
+      },
+    });
+
+    fireEvent.click(getByTestId('button-component'));
+    expect(createTodoAction).toHaveBeenCalled();
+    expect(createTodoAction).toHaveBeenCalledWith({
+      id: setNanoId,
+      todo: 'todo',
+    });
+  });
+});
