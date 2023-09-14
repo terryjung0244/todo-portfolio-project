@@ -28,7 +28,7 @@ const CreateTodo = () => {
   };
 
   return (
-    <Styled.CreateTodo>
+    <Styled.CreateTodo data-testid="createTodo-component">
       <div className="input-and-button-background">
         <div className="input-and-button-main">
           <Input
