@@ -1,18 +1,18 @@
 import CreateTodo from '../CreateTodo';
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { Store } from '@reduxjs/toolkit';
 import { createMockStore } from 'service/mock/store/mockStore';
 import { todoReducerMockDataInitialState } from 'service/mock/data/todoReducerMockData';
+import { InputPropsType } from 'components/input/Input.interface';
 
-const renderComponent = (store: Store) => {
+const renderComponent = (store: Store) =>
   render(
     <Provider store={store}>
       <CreateTodo />
     </Provider>,
     // createTodo에서 dispatch을 사용하고 있기에, <Provider store={store}>로 감싸줘야한다.
   );
-};
 
 describe('layout/createTodo', () => {
   let store: Store;
@@ -30,4 +30,20 @@ describe('layout/createTodo', () => {
     //위 renderComponet에 parameter로 store을 보낸다.(1)
     expect(getByTestId('createTodo-component')).toBeInTheDocument();
   });
+
+  it('Render input component', () => {
+    const { getByTestId } = renderComponent(store);
+    expect(getByTestId('input-component')).toBeInTheDocument();
+  });
+
+  it('test button component', () => {
+    const { getByTestId } = renderComponent(store);
+    expect(getByTestId('input-and-button')).toBeInTheDocument();
+    fireEvent.click(getByTestId('button-component'));
+    expect(getByTestId('button-component')).toBeInTheDocument();
+  });
+
+  it('test ');
 });
+
+// alert('Enter Todo');
