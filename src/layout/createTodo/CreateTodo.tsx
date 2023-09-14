@@ -30,9 +30,9 @@ const CreateTodo = () => {
   return (
     <Styled.CreateTodo data-testid="createTodo-component">
       <div className="input-and-button-background">
-        <div className="input-and-button-main">
+        <div className="input-and-button-main" data-testid="input-and-button">
           <Input
-            dataTestId="createTodo-input-data-TestId"
+            dataTestId="input-component"
             className="createTodo-input"
             name="todo"
             value={createInput.todo}
@@ -42,7 +42,7 @@ const CreateTodo = () => {
           <Button
             width="120px"
             height="60px"
-            dataTestId="test-createTodo-button"
+            dataTestId="button-component"
             className="createTodo-button"
             text="ADD"
             onClick={createInputAddBtn}
