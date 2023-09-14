@@ -15,6 +15,6 @@ export const todoMockData: TodoType[] = [
 
 export const selectedIdListMockData: string[] = ['cat', 'dog', 'horse'];
 export const selectedIdListMockDataForUpdateTesting: string[] = [
-  'todoMockId1',
-  'todoMockId2',
+  todoMockData[0].id,
+  todoMockData[1].id,
 ];
