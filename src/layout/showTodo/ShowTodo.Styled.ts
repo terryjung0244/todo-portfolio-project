@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ShowTodo = styled.div`
-  border: 1px solid green;
+  /* border: 1px solid green; */
   width: 100%;
   min-height: 100px;
   font-size: 2rem;
@@ -14,7 +14,7 @@ export const ShowTodo = styled.div`
 
   .add-your-todo-text {
     height: 100%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     justify-content: center;
     align-items: center;
