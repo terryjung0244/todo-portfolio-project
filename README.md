@@ -19,16 +19,16 @@ Welcome to the React Todo App! This simple yet powerful task management applicat
 Frontend
 
 - **React:** Utilized for building a modular and dynamic user interface.
-- **Redux:**
+- **Redux:** With Redux, state is stored globally and ensuring a centralized and predictable data flow in the application, enhancing scalability and maintainbility.
 - **Styled-Component:** Styled for a visually appealing and user-friendly experience.
-  **typescript**
-- **testing**
+  **typescript** Enabling early error detection, improved code quality, and enhanced developer productivity through better code.
+- **testing** Made sure the app works well by doing thorough testing with tools like Jest and React Testing Library. Checked different parts of the code, from small pieces to the whole app, to make sure everything is stable and reliable
 
 Backend
 
-- **node.js**
-- **express**
-- **mongodb**
+- **node.js** Node.js is a platform that allows JavaScript to be used for server-side programming, making it possible to build scalable and efficient web applications.
+- **express** Express is a web application framework for Node.js that simplifies the process of building robust and scalable web applications by providing a set of features and tools.
+- **mongodb** MongoDB is a database management system that stores data in a flexible, JSON-like format. It is known for its scalability and flexibility, making it well-suited for handling large amounts of data in modern applications.
 
 ## Project Structure
 
